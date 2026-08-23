@@ -559,3 +559,30 @@ button:focus-visible {
   .hero-actions .btn { justify-content: center; }
   .footer-inner { flex-direction: column; }
 }
+/* ---------- Botón flotante de WhatsApp ---------- */
+.whatsapp-float {
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #25D366;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 18px rgba(24, 27, 32, 0.28);
+  z-index: 999;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.whatsapp-float:hover,
+.whatsapp-float:focus-visible {
+  transform: scale(1.08);
+  box-shadow: 0 8px 22px rgba(24, 27, 32, 0.34);
+}
+.whatsapp-float svg { width: 30px; height: 30px; display: block; }
+
+@media (max-width: 560px) {
+  .whatsapp-float { right: 16px; bottom: 16px; width: 54px; height: 54px; }
+  .whatsapp-float svg { width: 27px; height: 27px; }
+}
