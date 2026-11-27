@@ -1,0 +1,70 @@
+SITIO NUEVO DE SyJ PACK — CÓMO AGREGAR TUS FOTOS
+=================================================
+
+Abrí index.html con doble clic para ver el sitio en el navegador.
+Para publicarlo, subí TODO el contenido de esta carpeta (los .html y las
+carpetas css, js e img) en lugar de los archivos del sitio anterior.
+
+
+1) DÓNDE VAN LAS FOTOS NUEVAS
+-----------------------------
+Guardá tus fotos dentro de la carpeta "img". Por ejemplo:
+  img/galeria/cliente1.jpg
+  img/uso/caja-medias-en-local.jpg
+  img/3d/frente.jpg
+
+
+2) CÓMO REEMPLAZAR UN RECUADRO VACÍO
+------------------------------------
+Los espacios para fotos se ven en la página como recuadros rayados con un
+"+" y un texto (por ejemplo "+ Foto en uso 1").
+
+En el .html buscá (Ctrl+F) ese texto. Vas a encontrar algo así:
+
+  <figure class="slot" data-label="Foto en uso 1" data-reveal></figure>
+
+Poné tu foto ADENTRO de la etiqueta, así:
+
+  <figure class="slot" data-label="Foto en uso 1" data-reveal><img src="img/uso/foto1.jpg" alt="Caja de medias en un local"></figure>
+
+Listo: el recuadro rayado desaparece y aparece tu foto.
+Importante: no dejes espacios ni saltos de línea vacíos entre <figure ...> y </figure>
+si todavía no pusiste la foto, porque el recuadro de ayuda deja de verse.
+
+
+3) ESPACIOS PARA FOTOS QUE TE DEJÉ
+----------------------------------
+index.html
+  - "Galería" (6 fotos): clientes con sus cajas, local de un cliente, la planta, un pedido listo.
+  - "Girala en 3D" (6 caras: Frente, Dorso, Lateral, Lateral, Tapa, Base).
+    Ahí la etiqueta es <div class="face front slot" ...></div>. Poné la foto así:
+    <div class="face front slot" data-label="Frente"><img src="img/3d/frente.jpg" alt=""></div>
+    Tip: usá fotos de frente, recortadas justo al borde de la caja.
+  - "Del diseño a la caja" (2 fotos): el diseño digital y la foto de la caja impresa.
+  - "Así se arma" (video): podés poner
+    <video src="img/video/armado.mp4" autoplay muted loop playsinline></video>
+    en lugar del <figure class="slot" ...></figure>, o un iframe de YouTube.
+
+Cada página de catálogo (cajas, boxer, bolsas, ajuar, más packaging)
+  - "Así se ven en la vida real" (3 fotos por página).
+
+
+4) AGREGAR UN PRODUCTO NUEVO AL CATÁLOGO
+----------------------------------------
+Lo más fácil: copiá un bloque <li class="product-card" ...> ... </li> completo
+de la misma página, pegalo debajo y cambiá:
+  - el nombre (aparece en varios lugares dentro del bloque: data-product, alt, h3 y el link de WhatsApp),
+  - la ruta de la imagen (src="img/...").
+Las fotos de producto se ven mejor con fondo blanco.
+
+Si preferís, pasame las fotos nuevas y las agrego yo.
+
+
+5) COSAS PARA REVISAR ANTES DE PUBLICAR
+---------------------------------------
+  - Preguntas frecuentes (index.html): ajustá las respuestas con tus datos
+    reales (mínimos de pedido, plazos, envíos).
+  - Redes sociales: en el pie de página de cada .html hay líneas comentadas
+    para Instagram y Facebook. Poné tus links y sacá los <!-- -->.
+  - Las fotos del catálogo ya están optimizadas (formato .webp): pasaron de
+    unos 82 MB a 4 MB en total, así la página carga rápido en el celular.
